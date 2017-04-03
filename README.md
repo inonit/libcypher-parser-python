@@ -33,7 +33,7 @@ $ python setup.py build_ext --inplace
 Paste the following code in your terminal.
 
 ```
-$ python -c "from libcypher_parser import parser; print(parser.parse_statement('MATCH (n) RETURN n'))"
+$ python -c "from libcypher_parser import parse_statement; print(parse_statement('MATCH (n) RETURN n'))"
 (True, {'n_errors': 0, 'n_nodes': 10, 'n_statements': 1})
 ```
 
