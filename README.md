@@ -25,6 +25,7 @@ For other platforms, see [the official docs](http://cleishm.github.io/libcypher-
 ## To build
 
 ```
+$ pip install Cython
 $ python setup.py build_ext --inplace
 ```
 
