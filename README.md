@@ -6,9 +6,21 @@ Python interface for [libcypher-parser](https://cleishm.github.io/libcypher-pars
 
 Requires `libcypher-parser` to be installed before compiling the extension.
 
+**Debian/Ubuntu**
+
+```
+$ sudo add-apt-repository ppa:cleishm/neo4j
+$ sudo apt-get update
+$ sudo apt-get install cypher-lint libcypher-parser-dev
+```
+
+**macOS**
+
 ```
 $ brew install cleishm/neo4j/libcypher-parser
 ```
+
+For other platforms, see [the official docs](http://cleishm.github.io/libcypher-parser/#building).
 
 ## To build
 
