@@ -17,6 +17,7 @@ $ python setup.py build_ext --inplace
 ```
 
 **A simple test**
+
 Paste the following code in your terminal.
 
 ```
