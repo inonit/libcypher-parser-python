@@ -15,7 +15,6 @@ addons:
       - sourceline: 'ppa:cleishm/neo4j'
     packages:
       - build-essential
-      - cypher-lint
       - libcypher-parser-dev
 
 cache:
@@ -27,10 +26,9 @@ before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
 install:
-  - pip install -Uq pip setuptools coveralls
+  - pip install -Uq pip setuptools coveralls cython
 
 script:
-  - python setup.py build_ext --inplace
   - python setup.py test
 
 after_success: coveralls
