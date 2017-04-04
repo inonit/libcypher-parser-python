@@ -14,7 +14,7 @@ Requires `libcypher-parser` to be installed before compiling the extension.
 ```
 $ sudo add-apt-repository ppa:cleishm/neo4j
 $ sudo apt-get update
-$ sudo apt-get install cypher-lint libcypher-parser-dev
+$ sudo apt-get install libcypher-parser-dev
 ```
 
 **macOS**
