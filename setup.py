@@ -4,7 +4,11 @@ import re
 import os
 
 from setuptools import setup, Extension
-from Cython.Build import cythonize
+try:
+    from Cython.Build import cythonize
+    USE_CYTHON = True
+except ImportError:
+    USE_CYTHON = False
 
 
 def get_version(package):
@@ -17,7 +21,7 @@ def get_version(package):
 extensions = [
     Extension(
         name='libcypher_parser.parser',
-        sources=['libcypher_parser/parser.pyx'],
+        sources=['libcypher_parser/parser.%(ext)s' % {'ext': 'pyx' if USE_CYTHON else 'c'}],
         include_dirs=['/usr/local/include'],
         libraries=['cypher-parser'],
         library_dirs=['/usr/local/opt/libcypher-parser']
@@ -37,10 +41,14 @@ setup(
     packages=[
         'libcypher_parser',
     ],
-    ext_modules=cythonize(extensions, nthreads=os.cpu_count()),
+    package_data={
+        'libcypher_parser': ['*.pxd']
+    },
+    ext_modules=cythonize(extensions, nthreads=os.cpu_count()) if USE_CYTHON else extensions,
     include_package_data=True,
-    install_requires=[
-        'Cython>=0.25.2',
+    install_requires=[],
+    setup_requires=[
+        'cython>=0.25.x',
     ],
     tests_require=[
         'nose',
