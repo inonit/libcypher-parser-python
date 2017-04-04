@@ -25,6 +25,13 @@ $ brew install cleishm/neo4j/libcypher-parser
 
 For other platforms, see [the official docs](http://cleishm.github.io/libcypher-parser/#building).
 
+**Installation**
+
+```
+$ pip install libcypher-parser-python
+```
+
+
 ## To build
 
 ```
