@@ -17,6 +17,7 @@ addons:
       - sourceline: 'ppa:cleishm/neo4j'
     packages:
       - build-essential
+      - cypher-lint
       - libcypher-parser-dev
 
 cache:
