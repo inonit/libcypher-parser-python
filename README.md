@@ -1,5 +1,8 @@
 # Cypher parser for Python
 
+[![Build Status](https://travis-ci.org/inonit/libcypher-parser-python.svg?branch=master)](https://travis-ci.org/inonit/libcypher-parser-python)
+[![Coverage Status](https://coveralls.io/repos/github/inonit/libcypher-parser-python/badge.svg?branch=master)](https://coveralls.io/github/inonit/libcypher-parser-python?branch=master)
+
 Python interface for [libcypher-parser](https://cleishm.github.io/libcypher-parser/).
 
 ## Getting started
