@@ -1,4 +1,4 @@
 include README.md
 include LICENSE
 include requirements.txt
-recursive-include libcypher_parser *.c *.pxd
+recursive-include libcypher_parser *.c *.pxd *.pyx

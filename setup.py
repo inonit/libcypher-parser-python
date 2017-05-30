@@ -24,7 +24,7 @@ extensions = [
         sources=['libcypher_parser/parser.%(ext)s' % {'ext': 'pyx' if USE_CYTHON else 'c'}],
         include_dirs=['/usr/local/include'],
         libraries=['cypher-parser'],
-        library_dirs=['/usr/local/opt/libcypher-parser']
+        library_dirs=['/usr/local/lib', '/usr/local/opt/libcypher-parser']
     )
 ]
 
@@ -41,9 +41,6 @@ setup(
     packages=[
         'libcypher_parser',
     ],
-    package_data={
-        'libcypher_parser': ['*.pxd']
-    },
     ext_modules=cythonize(extensions, nthreads=os.cpu_count()) if USE_CYTHON else extensions,
     include_package_data=True,
     install_requires=[],
@@ -58,7 +55,7 @@ setup(
     test_suite='tests.run_tests.start',
     classifiers=[
         'Operating System :: OS Independent',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Plugins',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
