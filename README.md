@@ -48,3 +48,44 @@ $ python -c "from libcypher_parser import parse_statement; print(parse_statement
 (True, {'n_errors': 0, 'n_nodes': 10, 'n_statements': 1})
 ```
 
+
+## Build distribution
+
+**macOS**
+
+1. Make sure to install the dev dependencies
+
+```
+$ pipenv install -d
+```
+
+2. Build both the source and wheel distribution
+
+```
+$ python setup.py sdist bdist_wheel
+```
+
+3. Add required dynamic libraries to the binary distribution
+
+We'll use the [delocate](https://github.com/matthew-brett/delocate) tool to add required 
+dynamic libraries so that users won't have to compile it themselves.
+
+```
+$ delocate-listdeps --all dist/libcypher_parser_python-0.0.5-cp37-cp37m-macosx_10_13_x86_64.whl
+```
+
+4. Verify that dynamic libraries are included
+
+```
+$ delocate-listdeps --all dist/libcypher_parser_python-0.0.5-cp37-cp37m-macosx_10_13_x86_64.whl
+/usr/lib/libSystem.B.dylib
+/usr/local/Cellar/libcypher-parser/0.6.0/lib/libcypher-parser.8.dylib
+```
+
+**Linux**
+
+TODO: Write similar setup for [autitwheel](https://github.com/pypa/auditwheel)
+
+**Windows**
+
+TODO
